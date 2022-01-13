@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/AppBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/fund" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RadioGroup
+        android:id="@+id/time_range_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/one_day_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@color/transparent"
+            android:minHeight="30dp"
+            android:padding="8dp"
+            android:text="1D"
+            android:textAlignment="center"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/one_week_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@color/transparent"
+            android:minHeight="30dp"
+            android:padding="8dp"
+            android:text="1W"
+            android:textAlignment="center"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/one_mounth_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@color/transparent"
+            android:minHeight="30dp"
+            android:padding="8dp"
+            android:text="1M"
+            android:textAlignment="center"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/one_year_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@color/transparent"
+            android:minHeight="30dp"
+            android:padding="8dp"
+            android:text="1Y"
+            android:textAlignment="center"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        tools:listitem="@layout/item_fund_detial_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/time_range_radio_group" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
